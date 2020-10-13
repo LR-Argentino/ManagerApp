@@ -11,7 +11,7 @@
   <tbody>
     <tr *ngFor="let data of users">
       <td [nzChecked]="loading" (nzCheckedChange)="onAllChecked($event, data)"></td>
-      <td><i nz-icon nzType="mail" nzTheme="twotone"></i> <span nz-typography><kbd>{{data.email}}</kbd></span> </td>
+      <td><span nz-typography><kbd>{{data.email}}</kbd></span> </td>
       <td>{{ data.phone }}</td>
       <td>{{ data.username }}</td>
       <td><i nz-icon nzType="delete" nzTheme="twotone" class="delete" (click)="deleteItem(data)"></i></td>

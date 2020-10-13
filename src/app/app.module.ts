@@ -16,6 +16,7 @@ import { registerLocaleData } from '@angular/common';
 import de from '@angular/common/locales/de';
 import { MusicComponent } from './music/music.component';
 import { CardComponent } from './music/card/card.component';
+import { TodoComponent } from './todo/todo.component';
 
 registerLocaleData(de);
 
@@ -23,7 +24,8 @@ registerLocaleData(de);
   declarations: [
     AppComponent,
     MusicComponent,
-    CardComponent
+    CardComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,
