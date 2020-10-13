@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { UsersService } from './users.service';
+import { MusicService } from './music.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'managecalc';
+  isCollapsed = false;
+  data = [];
+
+  constructor(
+    private api: MusicService,
+    private userApi: UsersService
+    ){}
+  
+
+  getComment(): void {
+    this.userApi.getUsers().subscribe(data => {
+      this.data = data;
+      console.log(this.data);
+    });
+  }
 }

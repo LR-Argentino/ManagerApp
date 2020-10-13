@@ -1,0 +1,21 @@
+  <nz-table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Email </th>
+      <th>Phone Number</th>
+      <th>Username</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of users">
+      <td [nzChecked]="loading" (nzCheckedChange)="onAllChecked($event, data)"></td>
+      <td><i nz-icon nzType="mail" nzTheme="twotone"></i> <span nz-typography><kbd>{{data.email}}</kbd></span> </td>
+      <td>{{ data.phone }}</td>
+      <td>{{ data.username }}</td>
+      <td><i nz-icon nzType="delete" nzTheme="twotone" class="delete" (click)="deleteItem(data)"></i></td>
+    </tr>
+  </tbody>
+</nz-table>
+
